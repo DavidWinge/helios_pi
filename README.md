@@ -91,6 +91,7 @@ in the terminal.
 * Execute these commands to update and install necessary software to the Pi
   * `sudo apt update`
   * `sudo apt full-upgrade`
+  * `sudo apt-get install libatlas-base-dev`
   * `pip install -U numpy`
   * `pip install notebook`
   * `pip install jupyterplot`
@@ -113,6 +114,7 @@ in the terminal.
 * Open Real VNC on your computer
   * The address of the raspberry pi is: [raspberrypi_name].local
 * In the top left, use the black suqare icon to open a terminal window
+* **If you are experiencing a very slow Chromium browser on your pi, try diabling hardware acceleration in the browser settings.**
 
 ### (Recommended) Running the Jupyter notebook without VNC (Indirect but less laggy)
 #### Linux/MAC
@@ -212,3 +214,18 @@ in the terminal.
     * For passphrase, enter the password for the network. Press enter
     * Back at the main menue, use the right arrow key twice to mark
       "Finish", then press enter
+      
+## If you run into problems with numpy on your Raspberry Pi (for example with the jupyterplot package)
+  Part of this information can be found at:
+  https://numpy.org/devdocs/user/troubleshooting-importerror.html
+  * Open up the terminal on your pi and enter
+  * 'sudo pip install -U numpy'
+  * 'sudo apt-get install libatlas-base-dev'
+  These steps are meant to fix a broken numpy installation on your Raspberry. 
+  * Restart the kernel in your jupyter notebook, or restart the application
+  *Alternatively:*
+  * Open up the terminal on your pi and enter
+  * 'sudo pip3 uninstall numpy'  # remove previously installed version
+  * 'sudo apt install python3-numpy'
+  This way could also work.
+    
